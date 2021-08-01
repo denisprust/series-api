@@ -1,10 +1,7 @@
 const Series = require('../models/series.model.js');
 
-const base64Img = require('base64-img');
-
 // Create and Save a new Series
 exports.create = (req, res) => {
-    console.log(req.body)
     // Validate request
     if(!req.body.name || !req.body.year || !req.body.seasons || !req.body.category) {
         return res.status(400).send({

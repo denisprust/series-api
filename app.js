@@ -5,7 +5,6 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
 var seriesRouter = require('./app/routes/series.routes.js');
-var userRouter = require('./app/routes/user.routes.js');
 var app = express();
 var cors = require('cors')
 
@@ -33,7 +32,6 @@ db.mongoose
     process.exit();
   });
 
-app.use('/', cors(), userRouter);
 app.use('/', cors(),seriesRouter);
 // app.use('/users', usersRouter);
 
